@@ -7,6 +7,7 @@ def solution(board):
     ULx,ULy = [-1,0,1,0,-1,0,-1,0], [0,1,0,-1,0,0,-1,-1]
     URx,URy = [-1,0,1,0,0,1,0,1], [0,1,0,-1,1,1,0,0]
 
+
     cnt = 0
     board_length = len(board)
     nows = deque()
