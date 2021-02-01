@@ -25,5 +25,6 @@ def solution(s):
 
 if __name__ == "__main__":
     res = ["aabbaccc","ababcdcdababcdcd","abcabcdede","abcabcabcabcdededededede","xababcdcdababcdcd"]
+
     for i in res:
         print(solution(i))
