@@ -60,7 +60,6 @@ if __name__ == "__main__":
         for j in range(num_users):
             similarity[i][j] = [calc_similarity(normalized,i,j),j]
 
-
     num_reco_users = int(input())
     # num_reco_users 만큼 입력받아서 계산 후 출력
     for i in range(num_reco_users):
