@@ -37,7 +37,7 @@ def closestStraightCity(c, x, y, q):
             # 기준 좌표에서 +1, -1 인덱스 떨어진 좌표까지의 거리와 result 에 저장된 거리 비교해서 더 작은값 저장!
             if 0 <= X+j <lenx:
                 if abs(list(tmpx.keys())[X+j] - tmp[1]) < result[1]:
-                    result = [tmpx[list(tmpx.keys()[X+j])], abs(list(tmpx.keys())[X+j] - tmp[1])]
+                    result = [tmpx[list(tmpx.keys())[X+j]], abs(list(tmpx.keys())[X+j] - tmp[1])]
             if 0 <= Y+j <leny:
                 if abs(list(tmpy.keys())[Y+j] - tmp[0]) < result[1]:
                     result = [tmpy[list(tmpy.keys())[Y+j]], abs(list(tmpy.keys())[Y+j] - tmp[0])]
