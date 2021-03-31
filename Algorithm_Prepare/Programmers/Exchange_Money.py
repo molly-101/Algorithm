@@ -1,17 +1,13 @@
 def solution(n, money):
-    memo = [0]*(n+1)
+    memo = [0] * (n + 1)
+    memo[0] = 1
 
-    def back_tracking(n):
-        if n < 0:
-            return 0
-        if memo[n] != 0:
-            return memo[n]
-        if n == 0:
-            return 1
-        else:
-            memo[n] = sum(back_tracking(n-i) for i in money)
-            return memo[n]
-    print(back_tracking(n))
+    for i in money:
+        for j in range(n + 1 - i):
+            memo[j + i] += memo[j]
+            memo[j + i] %= 1000000007
+
+    return memo[n]
 
 
 if __name__ == "__main__":
