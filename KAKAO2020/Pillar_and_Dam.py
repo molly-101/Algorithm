@@ -3,7 +3,6 @@ def solution(n, build_frame):
 
     for x, y, a, b in build_frame:
         frame = (x, y, a)
-        print(frame)
         if b == 1:
             result.add(frame)
             if is_impossible(result):
@@ -12,7 +11,6 @@ def solution(n, build_frame):
             result.remove(frame)
             if is_impossible(result):
                 result.add(frame)
-        print(result)
 
     return sorted(result, key=lambda x: (x[0], x[1], x[2]))
 
