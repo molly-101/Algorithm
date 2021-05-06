@@ -21,7 +21,7 @@ def solution(board):
                 if abs(i - now[2]) == 0 and now[3] + 100 <= memo[tmpx][tmpy]:
                     memo[tmpx][tmpy] = now[3] + 100
                     dq.append([tmpx, tmpy, i, now[3]+100])
-                # jikgak move
+                # vertical move
                 elif abs(i - now[2]) % 2 == 1 and now[3] + 600 <= memo[tmpx][tmpy]:
                     memo[tmpx][tmpy] = now[3] + 600
                     dq.append([tmpx, tmpy, i, now[3]+600])
