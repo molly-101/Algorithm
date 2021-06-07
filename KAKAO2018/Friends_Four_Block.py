@@ -7,11 +7,13 @@ def solution(m, n, board):
 
     while True:
         for i in range(n):
-            for j in range(m - 2, -1, -1):
+            for j in range(m - 1, -1, -1):
                 for k in range(j, m - 1):
-                    if board[k][i] != "O" and board[k + 1][i] == "O":
+                    if board[k][i] != "o" and board[k + 1][i] == "o":
                         board[k + 1][i] = board[k][i]
-                        board[k][i] = "O"
+                        board[k][i] = "o"
+                    else:
+                        break
 
         cnt = findSquare(m, n, board)
         result += cnt
@@ -24,22 +26,22 @@ def findSquare(m, n, board):
     for i in range(m - 1):
         for j in range(n - 1):
             tmp = board[i][j]
-            if tmp == "O":
+            if tmp == "o":
                 continue
             if board[i + 1][j] == tmp and board[i][j + 1] == tmp and board[i + 1][j + 1] == tmp:
                 if [i, j] not in removed:
-                    removed.append([i,j])
-                if [i,j+1] not in removed:
-                    removed.append([i,j+1])
-                if [i+1,j] not in removed:
-                    removed.append([i+1,j])
-                if [i+1,j+1] not in removed:
-                    removed.append([i+1,j+1])
+                    removed.append([i, j])
+                if [i, j + 1] not in removed:
+                    removed.append([i, j + 1])
+                if [i + 1, j] not in removed:
+                    removed.append([i + 1, j])
+                if [i + 1, j + 1] not in removed:
+                    removed.append([i + 1, j + 1])
 
     rm = len(removed)
     if removed:
         for i in removed:
-            board[i[0]][i[1]] = "O"
+            board[i[0]][i[1]] = "o"
 
     return rm
 
