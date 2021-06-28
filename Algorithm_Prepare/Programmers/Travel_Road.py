@@ -33,3 +33,4 @@ def DFS(level, tickets, memo, now, result):
                 DFS(level + 1, tickets, memo, now, result)
                 memo[tmp] += 1
                 now.pop()
+
